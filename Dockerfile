@@ -8,7 +8,6 @@ ENV PYTHONUNBUFFERED=1
 ENV FLASK_APP=library_management_system_master.app
 CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--log-level", "debug", "library_management_system_master.app:app"]
 RUN apt-get update && apt-get install -y curl --no-install-recommends && rm -rf /var/lib/apt/lists/*
-RUN pip install -r reqiuiemepts.txt \
 RUN echo "--- Listing /app contents ---"
 RUN ls -R /app
 RUN echo "--- Verifying Python import ---"
